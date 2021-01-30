@@ -7,6 +7,14 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
+const oddNumbers = randomNumbers.filter(number => {
+  if (number % 2 != 0) {
+    return number
+  }
+})
+
+console.log(oddNumbers)
+
 /*
   02
 
@@ -14,6 +22,14 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 */
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
+
+const numbersLessThan501 = crazyNumbers.filter(number => {
+  if (number < 501) {
+    return number
+  }
+})
+
+console.log(numbersLessThan501);
 
 /*
   03
@@ -23,6 +39,10 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 */
 
 const numbers = [5, 7, 3]
+
+const squaredNumbers = numbers.map(number => number * number)
+
+console.log(squaredNumbers);
 
 /*
   04
@@ -45,6 +65,14 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
+const newArray = tarantinoMovies.filter(movie => {
+  if (movie.release < 2000) {
+    return movie
+  }
+})
+
+console.log({newArray, tarantinoMovies});
+
 /*
   05
 
@@ -61,6 +89,13 @@ const tvShows = [
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
+
+const newTvShows = tvShows.reduce((acc, show) => {
+  acc.push(show.name)
+  return acc
+}, [])
+
+console.log({newTvShows, tvShows});
 
 /*
   06
@@ -80,6 +115,13 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
+
+const games = cart.reduce((acc, item) => {
+  acc += '- ' + item.name + '\n'
+  return acc
+}, '')
+
+console.log(games);
 
 /*
   - Nome 1
